@@ -20,6 +20,8 @@ on:
   push:
     branches: 'testing'
 
+
+
 permissions:
   contents: write
   packages: write
@@ -27,7 +29,8 @@ permissions:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       MY_GITHUB_USER: ${{ secrets.MY_GITHUB_USER }}
