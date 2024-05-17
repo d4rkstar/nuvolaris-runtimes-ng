@@ -19,9 +19,7 @@
 name: Build Images
 on: 
   push:
-    tags:
-      - '[0-9]*'
-    branches-ignore: '*'
+    branches: 'testing'
 
 permissions:
   contents: write
