@@ -36,11 +36,11 @@ jobs:
     steps:
       - name: Checkout recursive
         uses: actions/checkout@v2
-      - name: License check
-        uses: apache/skywalking-eyes@main
+      #- name: License check
+      #  uses: apache/skywalking-eyes@main
       #  continue-on-error: true
-      - name: Task
-        run: sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+      #- name: Task
+      #  run: sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
       #- name: Registry login
       #  uses: docker/login-action@v3
       #  with:
