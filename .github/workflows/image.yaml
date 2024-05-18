@@ -27,7 +27,8 @@ permissions:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       MY_GITHUB_USER: ${{ secrets.MY_GITHUB_USER }}
@@ -46,11 +47,9 @@ jobs:
       #    registry: ghcr.io
       #    username: ${{ secrets.MY_GITHUB_USER }}
       #    password: ${{ secrets.MY_GITHUB_TOKEN }}
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3          
-      - name: Build Php
-        run: task build RT=php
+      #- name: Set up QEMU
+      #  uses: docker/setup-qemu-action@v3
+      #- name: Set up Docker Buildx
+      #  uses: docker/setup-buildx-action@v3          
       - name: Build Nodejs
-        run: task build RT=nodejs
+        run: task image-tag RT=nodejs && task build
