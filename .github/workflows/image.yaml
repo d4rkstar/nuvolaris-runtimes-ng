@@ -51,5 +51,11 @@ jobs:
       #  uses: docker/setup-qemu-action@v3
       #- name: Set up Docker Buildx
       #  uses: docker/setup-buildx-action@v3          
+      - name: Build golang
+        run: task image-tag RT=golang && task build
+      - name: Build python
+        run: task image-tag RT=python && task build
       - name: Build Nodejs
         run: task image-tag RT=nodejs && task build
+      - name: Build php
+        run: task image-tag RT=php && task build
